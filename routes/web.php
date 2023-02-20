@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\IncomeCardController;
+use App\Http\Controllers\IncomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +20,17 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::controller(IncomeCardController::class)->prefix('/income/card')->group(function () {
-    Route::get('/', 'index')->name('income.card.index');
-    Route::post('/', 'store')->name('income.card.store');
-    Route::get('/{incomeCard}/edit', 'edit')->name('income.card.edit');
-    Route::put('/{incomeCard}/update', 'update')->name('income.card.update');
-    Route::delete('/{incomeCard}/destroy', 'destroy')->name('income.card.destroy');
+Route::prefix('/income')->group(function () {
+
+    Route::controller(IncomeController::class)->prefix('/')->group( function () {
+        Route::get('/', 'index')->name('income.dashboard.index');
+    });
+
+    Route::controller(IncomeCardController::class)->prefix('/card')->group(function () {
+        Route::get('/', 'index')->name('income.card.index');
+        Route::post('/', 'store')->name('income.card.store');
+        Route::get('/{incomeCard}/edit', 'edit')->name('income.card.edit');
+        Route::put('/{incomeCard}/update', 'update')->name('income.card.update');
+        Route::delete('/{incomeCard}/destroy', 'destroy')->name('income.card.destroy');
+    });
 });
