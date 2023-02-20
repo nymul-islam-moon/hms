@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CashController;
 use App\Http\Controllers\IncomeCardController;
 use App\Http\Controllers\IncomeController;
 use Illuminate\Support\Facades\Route;
@@ -33,4 +34,14 @@ Route::prefix('/income')->group(function () {
         Route::put('/{incomeCard}/update', 'update')->name('income.card.update');
         Route::delete('/{incomeCard}/destroy', 'destroy')->name('income.card.destroy');
     });
+
+    Route::controller(CashController::class)->prefix('/cash')->group(function () {
+        Route::get('/', 'index')->name('income.cash.index');
+        Route::post('/', 'store')->name('income.cash.store');
+        Route::get('/{cash}/edit', 'edit')->name('income.cash.edit');
+        Route::put('/{cash}/update', 'update')->name('income.cash.update');
+        Route::delete('/{cash}/destroy', 'destroy')->name('income.cash.destroy');
+    });
+
+
 });
