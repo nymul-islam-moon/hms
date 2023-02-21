@@ -21,30 +21,16 @@
                 <ul aria-expanded="false">
                     <li><a href="{{ route('income.card.index') }}">Card</a></li>
                     <li><a href="{{ route('income.cash.index') }}">Cash</a></li>
-                    <li><a href="{{ route('income.bikash.index') }}">Bikash</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Mobile Banking</a>
                         <ul aria-expanded="false">
-                            <li><a href="./email-compose.html">Compose</a></li>
-                            <li><a href="./email-inbox.html">Inbox</a></li>
-                            <li><a href="./email-read.html">Read</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="./app-calender.html">Calendar</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
-                        <ul aria-expanded="false">
-                            <li><a href="./ecom-product-grid.html">Product Grid</a></li>
-                            <li><a href="./ecom-product-list.html">Product List</a></li>
-                            <li><a href="./ecom-product-detail.html">Product Details</a></li>
-                            <li><a href="./ecom-product-order.html">Order</a></li>
-                            <li><a href="./ecom-checkout.html">Checkout</a></li>
-                            <li><a href="./ecom-invoice.html">Invoice</a></li>
-                            <li><a href="./ecom-customers.html">Customers</a></li>
+                            <li><a href="./email-compose.html">Mobile Bank</a></li>
+                            <li><a href="{{ route('income.mobilebank.system.index') }}">Settings</a></li>
                         </ul>
                     </li>
                 </ul>
             </li>
 
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            {{-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-television"></i>
                     <span class="nav-text">Expenses</span>
                 </a>
@@ -64,7 +50,7 @@
                     <li><a href="">Cash</a></li>
 
                 </ul>
-            </li>
+            </li> --}}
 
         </ul>
     </div>
