@@ -39,6 +39,7 @@ class IncomeMobileBankController extends Controller
      */
     public function store(StoreIncomeMobileBankRequest $request)
     {
+
         $formData = $request->validated();
 
         IncomeMobileBank::create($formData);

@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form">
-                        <form action="{{ route('income.cash.store') }}" method="POST">
+                        <form action="{{ route('income.mobilebank.store') }}" method="POST">
                             @csrf
                             @method('POST')
                             <div class="form-row">
