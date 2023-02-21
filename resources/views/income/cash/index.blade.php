@@ -5,7 +5,7 @@
     <div class="page-titles">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('income.dashboard.index') }}">Income</a></li>
-            <li class="breadcrumb-item active"><a href="{{ route('income.card.index') }}">Card</a></li>
+            <li class="breadcrumb-item active"><a href="{{ route('income.cash.index') }}">Cash</a></li>
         </ol>
     </div>
     <!-- row -->
@@ -14,7 +14,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Card</h4>
+                    <h4 class="card-title">Cash</h4>
                 </div>
                 <div class="card-body">
                     <div class="basic-form">

@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\BikashController;
 use App\Http\Controllers\CashController;
 use App\Http\Controllers\IncomeCardController;
 use App\Http\Controllers\IncomeController;
+use App\Models\IncomeBikash;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +43,14 @@ Route::prefix('/income')->group(function () {
         Route::get('/{cash}/edit', 'edit')->name('income.cash.edit');
         Route::put('/{cash}/update', 'update')->name('income.cash.update');
         Route::delete('/{cash}/destroy', 'destroy')->name('income.cash.destroy');
+    });
+
+    Route::controller(IncomeBikash::class)->prefix('/bikash')->group(function () {
+        Route::get('/', 'index')->name('income.bikash.index');
+        Route::post('/', 'store')->name('income.cash.store');
+        Route::get('/{bikash}/edit', 'edit')->name('income.bikash.edit');
+        Route::put('/{bikash}/update', 'update')->name('income.bikash.update');
+        Route::delete('/{bikash}/destroy', 'destroy')->name('income.bikash.destroy');
     });
 
 
