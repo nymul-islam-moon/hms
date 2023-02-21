@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\IncomeMobileBank;
 use App\Http\Requests\StoreIncomeMobileBankRequest;
 use App\Http\Requests\UpdateIncomeMobileBankRequest;
+use App\Models\MobileBank;
 
 class IncomeMobileBankController extends Controller
 {
@@ -15,9 +16,9 @@ class IncomeMobileBankController extends Controller
      */
     public function index()
     {
-        $incomeMobileBank = IncomeMobileBank::all();
-
-        return view('income.mobilebank.index', compact('incomeMobileBank'));
+        $incomeMobileBanks = IncomeMobileBank::all();
+        $mobileBanks = MobileBank::all();
+        return view('income.mobile_bank.index', compact('incomeMobileBanks', 'mobileBanks'));
     }
 
     /**

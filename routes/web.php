@@ -4,6 +4,7 @@ use App\Http\Controllers\BikashController;
 use App\Http\Controllers\CashController;
 use App\Http\Controllers\IncomeCardController;
 use App\Http\Controllers\IncomeController;
+use App\Http\Controllers\IncomeMobileBankController;
 use App\Http\Controllers\MobileBankController;
 use App\Models\IncomeBikash;
 use App\Models\IncomeMobileBank;
@@ -47,13 +48,13 @@ Route::prefix('/income')->group(function () {
         Route::delete('/{cash}/destroy', 'destroy')->name('income.cash.destroy');
     });
 
-    // Route::controller(IncomeMobileBank::class)->prefix('/mobilebank')->group(function () {
-    //     Route::get('/', 'index')->name('income.mobilebank.index');
-    //     Route::post('/', 'store')->name('income.mobilebank.store');
-    //     Route::get('/{mobilebank}/edit', 'edit')->name('income.mobilebank.edit');
-    //     Route::put('/{mobilebank}/update', 'update')->name('income.mobilebank.update');
-    //     Route::delete('/{mobilebank}/destroy', 'destroy')->name('income.mobilebank.destroy');
-    // });
+    Route::controller(IncomeMobileBankController::class)->prefix('/mobilebank')->group(function () {
+        Route::get('/', 'index')->name('income.mobilebank.index');
+        Route::post('/', 'store')->name('income.mobilebank.store');
+        Route::get('/{mobilebank}/edit', 'edit')->name('income.mobilebank.edit');
+        Route::put('/{mobilebank}/update', 'update')->name('income.mobilebank.update');
+        Route::delete('/{mobilebank}/destroy', 'destroy')->name('income.mobilebank.destroy');
+    });
 
     Route::controller(MobileBankController::class)->prefix('/mobilebank/system')->group(function () {
         Route::get('/', 'index')->name('income.mobilebank.system.index');

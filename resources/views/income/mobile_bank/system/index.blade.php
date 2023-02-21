@@ -112,12 +112,10 @@
                                             </div>
                                         </td>
                                         <td><strong>{{ $key+1 }}</strong></td>
-                                        <td>{{ $incomeCard->card_number }}</td>
-                                        <td>{{ $incomeCard->credit_for }}</td>
-                                        <td>{{ $incomeCard->credit_by }}</td>
-                                        <td>{{ $incomeCard->date }}</td>
+                                        <td>{{ $mobileBank->name }}</td>
+                                        <td>{{ $mobileBank->number }}</td>
+                                        <td>{{ $mobileBank->owner_id }}</td>
                                         <td><span class="badge light badge-success">Successful</span></td>
-                                        <td>{{ $incomeCard->amount }}  {{ $incomeCard->currency == 1 ? 'Taka' : 'Doller' }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -23,7 +23,7 @@
                     <li><a href="{{ route('income.cash.index') }}">Cash</a></li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Mobile Banking</a>
                         <ul aria-expanded="false">
-                            <li><a href="./email-compose.html">Mobile Bank</a></li>
+                            <li><a href="{{ route('income.mobilebank.index') }}">Mobile Bank</a></li>
                             <li><a href="{{ route('income.mobilebank.system.index') }}">Settings</a></li>
                         </ul>
                     </li>

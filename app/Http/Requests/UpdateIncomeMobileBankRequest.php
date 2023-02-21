@@ -24,7 +24,14 @@ class UpdateIncomeMobileBankRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'mobile_bank_id' => 'required',
+            'currency' => 'required',
+            'cash_in_for' => 'required',
+            'amount' => 'required',
+            'date' => 'required',
+            'cash_in_by_name' => 'required',
+            'cash_in_by_phone' => 'required',
+            'description' => ['sometimes', 'nullable', 'string'],
         ];
     }
 }
