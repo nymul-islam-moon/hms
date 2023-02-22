@@ -30,7 +30,7 @@
                     <span class="nav-text">Expense</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="">Card</a></li>
+                    <li><a href="{{ route('expense.card.index') }}">Card</a></li>
                     <li><a href="">Cash</a></li>
                     <li><a href="">Mobile Bank</a></li>
                 </ul>
@@ -42,6 +42,7 @@
             </a>
             <ul aria-expanded="false">
                 <li><a href="{{ route('system.mobilebank.index') }}">Mobile Bank</a></li>
+                <li><a href="{{ route('system.card.index') }}">Card</a></li>
             </ul>
         </li>
         </ul>
