@@ -88,7 +88,7 @@
                                         @endforeach
                                     </select>
 
-                                    @error('currency')
+                                    @error('mobile_bank_id')
                                         <div class="alert alert-danger alert-dismissible fade show">
                                             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
                                             <strong>Error!</strong> {{ $message }}
@@ -112,7 +112,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label>Cashed For</label>
+                                    <label>Cashed in For</label>
                                     <select class="form-control default-select" name="cash_in_for" id="cash_in_for" tabindex="-98">
                                         <option selected>-- Select One --</option>
                                         <option value="1">1</option>
@@ -154,12 +154,14 @@
                                 <tr>
                                     <th>Action</th>
                                     <th class="width80">#</th>
-                                    <th>Person Name</th>
-                                    <th>Cashed For</th>
-                                    <th>Cashed By</th>
-                                    <th>DATE</th>
-                                    <th>STATUS</th>
+                                    <th>Sender Name</th>
+                                    <th>Sender Phone</th>
+                                    <th>Mobile Bank Account</th>
+                                    <th>Cashed in for</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
                                     <th>Amount</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -171,8 +173,8 @@
                                                     <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="{{ route('income.cash.edit', $incomeMobileBank->id) }}">Edit</a>
-                                                    <form action="{{ route('income.cash.destroy', $incomeMobileBank->id) }}" method="post">
+                                                    <a class="dropdown-item" href="{{ route('income.mobilebank.edit', $incomeMobileBank->id) }}">Edit</a>
+                                                    <form action="{{ route('income.mobilebank.destroy', $incomeMobileBank->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="dropdown-item" href="#">Delete</button>
@@ -181,12 +183,14 @@
                                             </div>
                                         </td>
                                         <td><strong>{{ $key+1 }}</strong></td>
-                                        <td>{{ $incomeMobileBank->name }}</td>
-                                        <td>{{ $incomeMobileBank->cashed_for }}</td>
-                                        <td>{{ $incomeMobileBank->cashed_by }}</td>
+                                        <td>{{ $incomeMobileBank->cash_in_by_name }}</td>
+                                        <td>{{ $incomeMobileBank->cash_in_by_phone }}</td>
+                                        <td>{{ $incomeMobileBank->mobile_bank_id }}</td>
+                                        <td>{{ $incomeMobileBank->cash_in_for }}</td>
                                         <td>{{ $incomeMobileBank->date }}</td>
                                         <td><span class="badge light badge-success">Successful</span></td>
                                         <td>{{ $incomeMobileBank->amount }}  {{ $incomeMobileBank->currency == 1 ? 'Taka' : 'Doller' }}</td>
+                                        <td>{{ $incomeMobileBank->description }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -48,13 +48,6 @@ Route::prefix('/income')->group(function () {
         Route::delete('/{cash}/destroy', 'destroy')->name('income.cash.destroy');
     });
 
-    Route::controller(IncomeMobileBankController::class)->prefix('/mobilebank')->group(function () {
-        Route::get('/', 'index')->name('income.mobilebank.index');
-        Route::post('/', 'store')->name('income.mobilebank.store');
-        Route::get('/{mobilebank}/edit', 'edit')->name('income.mobilebank.edit');
-        Route::put('/{mobilebank}/update', 'update')->name('income.mobilebank.update');
-        Route::delete('/{mobilebank}/destroy', 'destroy')->name('income.mobilebank.destroy');
-    });
 
     Route::controller(MobileBankController::class)->prefix('/mobilebank/system')->group(function () {
         Route::get('/', 'index')->name('income.mobilebank.system.index');
@@ -63,6 +56,16 @@ Route::prefix('/income')->group(function () {
         Route::put('/{mobilebanksystem}/update', 'update')->name('income.mobilebank.system.update');
         Route::delete('/{mobilebanksystem}/destroy', 'destroy')->name('income.mobilebank.system.destroy');
     });
+
+
+    Route::controller(IncomeMobileBankController::class)->prefix('/mobilebank')->group(function () {
+        Route::get('/', 'index')->name('income.mobilebank.index');
+        Route::post('/', 'store')->name('income.mobilebank.store');
+        Route::get('/{incomeMobileBank}/edit', 'edit')->name('income.mobilebank.edit');
+        Route::put('/{incomeMobileBank}/update', 'update')->name('income.mobilebank.update');
+        Route::delete('/{incomeMobileBank}/destroy', 'destroy')->name('income.mobilebank.destroy');
+    });
+
 
 
 });

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->date('date');
             $table->string('cash_in_by_name');
             $table->string('cash_in_by_phone');
-            $table->text('descriptions')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->foreign('mobile_bank_id')->references('id')->on('mobile_banks')->onDelete('CASCADE');
         });

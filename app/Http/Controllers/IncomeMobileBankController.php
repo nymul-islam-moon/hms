@@ -40,6 +40,8 @@ class IncomeMobileBankController extends Controller
     public function store(StoreIncomeMobileBankRequest $request)
     {
 
+        // dd($request->all());
+
         $formData = $request->validated();
 
         IncomeMobileBank::create($formData);
@@ -65,7 +67,8 @@ class IncomeMobileBankController extends Controller
      */
     public function edit(IncomeMobileBank $incomeMobileBank)
     {
-        return view('income.mobilebank.edit', compact('incomeMobileBank'));
+        $mobileBanks = MobileBank::all();
+        return view('income.mobile_bank.edit', compact('incomeMobileBank', 'mobileBanks'));
     }
 
     /**
@@ -78,7 +81,6 @@ class IncomeMobileBankController extends Controller
     public function update(UpdateIncomeMobileBankRequest $request, IncomeMobileBank $incomeMobileBank)
     {
         $formData = $request->validated();
-
         $incomeMobileBank->update($formData);
         return redirect(route('income.mobilebank.index'));
     }
@@ -91,6 +93,7 @@ class IncomeMobileBankController extends Controller
      */
     public function destroy(IncomeMobileBank $incomeMobileBank)
     {
+
         $incomeMobileBank->delete();
         return back();
     }

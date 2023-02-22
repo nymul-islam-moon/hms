@@ -60,9 +60,9 @@ class MobileBankController extends Controller
      * @param  \App\Models\MobileBank  $mobileBank
      * @return \Illuminate\Http\Response
      */
-    public function edit(MobileBank $mobileBank)
+    public function edit(MobileBank $mobilebanksystem)
     {
-        return view('income.mobilebank.system.edit', compact('mobileBank'));
+        return view('income.mobile_bank.system.edit', compact('mobilebanksystem'));
     }
 
     /**
@@ -72,11 +72,11 @@ class MobileBankController extends Controller
      * @param  \App\Models\MobileBank  $mobileBank
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMobileBankRequest $request, MobileBank $mobileBank)
+    public function update(UpdateMobileBankRequest $request, MobileBank $mobilebanksystem)
     {
         $formData = $request->validated();
 
-        $mobileBank->update($formData);
+        $mobilebanksystem->update($formData);
         return redirect(route('income.mobilebank.system.index'));
     }
 
@@ -86,9 +86,10 @@ class MobileBankController extends Controller
      * @param  \App\Models\MobileBank  $mobileBank
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MobileBank $mobileBank)
+    public function destroy(MobileBank $mobilebanksystem)
     {
-        $mobileBank->delete();
+
+        $mobilebanksystem->delete();
         return back();
     }
 }
