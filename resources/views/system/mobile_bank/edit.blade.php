@@ -19,7 +19,7 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form">
-                        <form action="{{ route('income.mobilebank.system.update', $mobilebanksystem->id) }}" method="POST">
+                        <form action="{{ route('system.mobilebank.update', $mobilebanksystem->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="form-row">

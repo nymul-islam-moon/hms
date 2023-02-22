@@ -21,37 +21,29 @@
                 <ul aria-expanded="false">
                     <li><a href="{{ route('income.card.index') }}">Card</a></li>
                     <li><a href="{{ route('income.cash.index') }}">Cash</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Mobile Banking</a>
-                        <ul aria-expanded="false">
-                            <li><a href="{{ route('income.mobilebank.index') }}">Mobile Bank</a></li>
-                            <li><a href="{{ route('income.mobilebank.system.index') }}">Settings</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-
-            {{-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="flaticon-381-television"></i>
-                    <span class="nav-text">Expenses</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="">Card</a></li>
-                    <li><a href="">Cash</a></li>
-
+                    <li><a href="{{ route('income.mobilebank.index') }}">Mobile Bank</a></li>
                 </ul>
             </li>
 
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-television"></i>
-                    <span class="nav-text">Transfer</span>
+                    <span class="nav-text">Expense</span>
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="">Card</a></li>
                     <li><a href="">Cash</a></li>
-
+                    <li><a href="">Mobile Bank</a></li>
                 </ul>
-            </li> --}}
+            </li>
 
+            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                <i class="flaticon-381-television"></i>
+                <span class="nav-text">System</span>
+            </a>
+            <ul aria-expanded="false">
+                <li><a href="{{ route('system.mobilebank.index') }}">Mobile Bank</a></li>
+            </ul>
+        </li>
         </ul>
     </div>
 </div>

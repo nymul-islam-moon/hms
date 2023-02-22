@@ -16,7 +16,7 @@ class MobileBankController extends Controller
     public function index()
     {
         $mobileBanks = MobileBank::all();
-        return view('income.mobile_bank.system.index', compact('mobileBanks'));
+        return view('system.mobile_bank.index', compact('mobileBanks'));
     }
 
     /**
@@ -62,7 +62,7 @@ class MobileBankController extends Controller
      */
     public function edit(MobileBank $mobilebanksystem)
     {
-        return view('income.mobile_bank.system.edit', compact('mobilebanksystem'));
+        return view('system.mobile_bank.edit', compact('mobilebanksystem'));
     }
 
     /**
@@ -77,7 +77,7 @@ class MobileBankController extends Controller
         $formData = $request->validated();
 
         $mobilebanksystem->update($formData);
-        return redirect(route('income.mobilebank.system.index'));
+        return redirect(route('system.mobilebank.index'));
     }
 
     /**

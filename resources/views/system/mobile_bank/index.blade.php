@@ -19,7 +19,7 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form">
-                        <form action="" method="POST">
+                        <form action="{{ route('system.mobilebank.store') }}" method="POST">
                             @csrf
                             @method('POST')
                             <div class="form-row">
@@ -102,8 +102,8 @@
                                                     <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="{{ route('income.mobilebank.system.edit', $mobileBank->id) }}">Edit</a>
-                                                    <form action="{{ route('income.mobilebank.system.destroy', $mobileBank->id) }}" method="post">
+                                                    <a class="dropdown-item" href="{{ route('system.mobilebank.edit', $mobileBank->id) }}">Edit</a>
+                                                    <form action="{{ route('system.mobilebank.destroy', $mobileBank->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="dropdown-item" href="#">Delete</button>
