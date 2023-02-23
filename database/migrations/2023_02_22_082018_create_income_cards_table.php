@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('income_cards', function (Blueprint $table) {
             $table->id();
-            $table->string('bank_name');
-            $table->string('card_number');
+            $table->unsignedBigInteger('card_id');
             $table->tinyInteger('credit_by');
             $table->tinyInteger('credit_for');
             $table->tinyInteger('currency');

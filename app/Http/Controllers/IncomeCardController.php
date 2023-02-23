@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\IncomeCard;
 use App\Http\Requests\StoreIncomeCardRequest;
 use App\Http\Requests\UpdateIncomeCardRequest;
+use App\Models\Card;
 
 class IncomeCardController extends Controller
 {
@@ -15,8 +16,9 @@ class IncomeCardController extends Controller
      */
     public function index()
     {
+        $cards = Card::all();
         $incomeCards = IncomeCard::all();
-        return view('income.card.index', compact('incomeCards'));
+        return view('income.card.index', compact('incomeCards', 'cards'));
     }
 
     /**
