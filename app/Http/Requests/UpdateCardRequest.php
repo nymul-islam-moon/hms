@@ -13,7 +13,7 @@ class UpdateCardRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class UpdateCardRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'number' => 'required',
+            'owner_id' => 'required',
         ];
     }
 }
