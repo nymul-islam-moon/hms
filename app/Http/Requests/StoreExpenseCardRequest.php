@@ -24,7 +24,12 @@ class StoreExpenseCardRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'card_id'=> 'required',
+            'amount'=> 'required',
+            'currency'=> 'required',
+            'date'=> 'required',
+            'expense_by_id'=> 'required',
+            'description' => ['sometimes', 'nullable', 'string'],
         ];
     }
 }

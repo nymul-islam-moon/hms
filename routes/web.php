@@ -67,10 +67,10 @@ Route::prefix('/income')->group(function () {
 Route::prefix('/expense')->group(function () {
     Route::controller(ExpenseCardController::class)->prefix('/card')->group(function () {
         Route::get('/', 'index')->name('expense.card.index');
-        // Route::post('/', 'store')->name('expense.card.store');
-        // Route::get('/{expenseCard}/edit', 'edit')->name('expense.card.edit');
-        // Route::put('/{expenseCard}/update', 'update')->name('expense.card.update');
-        // Route::delete('/{expenseCard}/destroy', 'destroy')->name('expense.card.destroy');
+        Route::post('/', 'store')->name('expense.card.store');
+        Route::get('/{expenseCard}/edit', 'edit')->name('expense.card.edit');
+        Route::put('/{expenseCard}/update', 'update')->name('expense.card.update');
+        Route::delete('/{expenseCard}/destroy', 'destroy')->name('expense.card.destroy');
     });
 });
 

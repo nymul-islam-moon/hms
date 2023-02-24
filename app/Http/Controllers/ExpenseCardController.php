@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ExpenseCard;
 use App\Http\Requests\StoreExpenseCardRequest;
 use App\Http\Requests\UpdateExpenseCardRequest;
+use App\Models\Card;
 
 class ExpenseCardController extends Controller
 {
@@ -15,7 +16,9 @@ class ExpenseCardController extends Controller
      */
     public function index()
     {
-        return view('expense.card.index');
+        $cards = Card::all();
+        $expenseCards = ExpenseCard::all();
+        return view('expense.card.index', compact('cards', 'expenseCards'));
     }
 
     /**
@@ -36,7 +39,11 @@ class ExpenseCardController extends Controller
      */
     public function store(StoreExpenseCardRequest $request)
     {
-        //
+        $formData = $request->validated();
+
+        ExpenseCard::create($formData);
+        return back();
+
     }
 
     /**
@@ -58,7 +65,8 @@ class ExpenseCardController extends Controller
      */
     public function edit(ExpenseCard $expenseCard)
     {
-        //
+        $cards = Card::all();
+        return view('expense.card.edit', compact('expenseCard', 'cards'));
     }
 
     /**
@@ -70,7 +78,10 @@ class ExpenseCardController extends Controller
      */
     public function update(UpdateExpenseCardRequest $request, ExpenseCard $expenseCard)
     {
-        //
+        $formData = $request->validated();
+
+        $expenseCard->update($formData);
+        return redirect(route('expense.card.index'));
     }
 
     /**
@@ -81,6 +92,7 @@ class ExpenseCardController extends Controller
      */
     public function destroy(ExpenseCard $expenseCard)
     {
-        //
+        $expenseCard->delete();
+        return back();
     }
 }
