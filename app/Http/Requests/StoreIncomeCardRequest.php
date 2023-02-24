@@ -24,8 +24,7 @@ class StoreIncomeCardRequest extends FormRequest
     public function rules()
     {
         return [
-            'bank_name' => 'required',
-            'card_number' => 'required',
+            'card_id' => 'required',
             'currency' => 'required',
             'credit_by' => 'required',
             'credit_for' => 'required',

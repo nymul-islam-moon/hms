@@ -37,7 +37,9 @@ class CardController extends Controller
      */
     public function store(StoreCardRequest $request)
     {
-        //
+        $formData = $request->validated();
+        Card::create($formData);
+        return back();
     }
 
     /**
@@ -59,7 +61,7 @@ class CardController extends Controller
      */
     public function edit(Card $card)
     {
-        //
+        return view('system.card.edit', compact('card'));
     }
 
     /**
@@ -71,7 +73,10 @@ class CardController extends Controller
      */
     public function update(UpdateCardRequest $request, Card $card)
     {
-        //
+        $formData = $request->validated();
+
+        $card->update($formData);
+        return redirect(route('system.card.index'));
     }
 
     /**
@@ -82,6 +87,7 @@ class CardController extends Controller
      */
     public function destroy(Card $card)
     {
-        //
+        $card->delete();
+        return back();
     }
 }

@@ -89,8 +89,8 @@ Route::prefix('/system')->group(function () {
     Route::controller(CardController::class)->prefix('/card')->group(function () {
         Route::get('/', 'index')->name('system.card.index');
         Route::post('/', 'store')->name('system.card.store');
-        Route::get('/{cardSystem}/edit', 'edit')->name('system.card.edit');
-        Route::put('/{cardSystem}/update', 'update')->name('system.card.update');
-        Route::delete('/{cardSystem}/destroy', 'destroy')->name('system.card.destroy');
+        Route::get('/{card}/edit', 'edit')->name('system.card.edit');
+        Route::put('/{card}/update', 'update')->name('system.card.update');
+        Route::delete('/{card}/destroy', 'destroy')->name('system.card.destroy');
     });
 });

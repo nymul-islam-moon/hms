@@ -11,5 +11,5 @@ class IncomeCard extends Model
 
     protected $table = 'income_cards';
 
-    protected $fillable = ['bank_name', 'card_number', 'currency', 'amount', 'date', 'credit_for', 'credit_by', 'description'];
+    protected $fillable = ['card_id', 'currency', 'amount', 'date', 'credit_for', 'credit_by', 'description'];
 }
