@@ -117,6 +117,52 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-xl-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Add Products</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="basic-form">
+                                    <form action="#">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="btn btn-primary" type="button">Product Name</span>
+                                            </div>
+                                            <input type="text" class="form-control">
+                                            <div class="input-group-prepend">
+                                                <span class="btn btn-primary" type="button">Product Price</span>
+                                            </div>
+                                            <input type="text" class="form-control">
+                                            <div class="input-group-prepend">
+                                                <span class="btn btn-primary" type="button">Product Quantity</span>
+                                            </div>
+                                            <input type="text" class="form-control">
+                                            <div class="input-group-prepend">
+                                                <span class="btn btn-primary" type="button">Product Quantity</span>
+                                            </div>
+                                            <input type="text" class="form-control">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">Button</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="btn btn-primary" type="button">Button</span>
+                                                <button class="btn btn-primary" type="button">Button</button>
+                                            </div>
+                                            <input type="text" class="form-control">
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
