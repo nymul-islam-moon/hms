@@ -812,8 +812,7 @@
     ***********************************-->
 
     @include('components.footer_link');
-    
-
+    @stack('custome_script');
 </body>
 
 </html>

@@ -105,11 +105,69 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-12">
                                     <label>Description </label>
                                     <textarea class="form-control" name="description" id="description" rows="4" id="comment"></textarea>
                                 </div>
 
+
+                                <div class="form-group col-md-3">
+                                    <label>Product Name </label>
+                                    <input type="text" name="product_name" id="product_name" step="0.01" class="form-control" placeholder="Enter The Amount">
+                                    @error('product_name')
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                            <strong>Error!</strong> {{ $message }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label>Amount</label>
+                                    <input type="number" name="amount" id="amount" step="0.01" class="form-control" placeholder="Enter The Amount">
+                                    @error('amount')
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                            <strong>Error!</strong> {{ $message }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label>Quantity</label>
+                                    <input type="number" name="amount" id="amount" step="0.01" class="form-control" placeholder="Enter The Amount">
+                                    @error('amount')
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                            <strong>Error!</strong> {{ $message }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group col-md-3" id="x">
+                                    <label>Unit </label>
+                                    <select class="form-control default-select" name="currency" id="currency" tabindex="-98">
+                                        <option selected>-- Select One --</option>
+                                        <option value="1">kg</option>
+                                        <option value="2">litter</option>
+                                        <option value="2">pice</option>
+                                    </select>
+
+                                    @error('currency')
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                            <strong>Error!</strong> {{ $message }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
+                                        </div>
+                                    @enderror
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -118,50 +176,89 @@
             </div>
         </div>
 
-        <div class="col-xl-12 col-lg-6">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Add Products</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="basic-form">
-                                    <form action="#">
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="btn btn-primary" type="button">Product Name</span>
-                                            </div>
-                                            <input type="text" class="form-control">
-                                            <div class="input-group-prepend">
-                                                <span class="btn btn-primary" type="button">Product Price</span>
-                                            </div>
-                                            <input type="text" class="form-control">
-                                            <div class="input-group-prepend">
-                                                <span class="btn btn-primary" type="button">Product Quantity</span>
-                                            </div>
-                                            <input type="text" class="form-control">
-                                            <div class="input-group-prepend">
-                                                <span class="btn btn-primary" type="button">Product Quantity</span>
-                                            </div>
-                                            <input type="text" class="form-control">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="button">Button</button>
-                                            </div>
+        {{-- <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Products</h4>
+                </div>
+                <div class="card-body">
+                    <div class="basic-form">
+                        <form action="" method="POST">
+                            @csrf
+                            @method('POST')
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label>Product Name </label>
+                                    <input type="text" name="product_name" id="product_name" step="0.01" class="form-control" placeholder="Enter The Amount">
+                                    @error('product_name')
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                            <strong>Error!</strong> {{ $message }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
                                         </div>
-
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="btn btn-primary" type="button">Button</span>
-                                                <button class="btn btn-primary" type="button">Button</button>
-                                            </div>
-                                            <input type="text" class="form-control">
-                                        </div>
-
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </form>
+                                    @enderror
                                 </div>
+
+
+
+                                <div class="form-group col-md-3">
+                                    <label>Amount</label>
+                                    <input type="number" name="amount" id="amount" step="0.01" class="form-control" placeholder="Enter The Amount">
+                                    @error('amount')
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                            <strong>Error!</strong> {{ $message }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label>Quantity</label>
+                                    <input type="number" name="amount" id="amount" step="0.01" class="form-control" placeholder="Enter The Amount">
+                                    @error('amount')
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                            <strong>Error!</strong> {{ $message }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label>Unit </label>
+                                    <select class="form-control default-select" name="currency" id="currency" tabindex="-98">
+                                        <option selected>-- Select One --</option>
+                                        <option value="1">kg</option>
+                                        <option value="2">litter</option>
+                                        <option value="2">pice</option>
+                                    </select>
+
+                                    @error('currency')
+                                        <div class="alert alert-danger alert-dismissible fade show">
+                                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                                            <strong>Error!</strong> {{ $message }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
+                                        </div>
+                                    @enderror
+                                </div>
+
+
+
+
                             </div>
-                        </div>
-					</div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+
+
 
         <div class="col-lg-12">
             <div class="card">
@@ -218,5 +315,25 @@
         </div>
     </div>
 </div>
+@push('custome_script')
+    <script>
+        $(document).ready(function(){
 
+            x+='<div class="form-group col-md-3">';
+            x+='<label>Product Name </label>';
+            x+='<input type="text" name="product_name" id="product_name" step="0.01" class="form-control" placeholder="Enter The Amount">';
+            x+='@error('product_name')';
+            x+='<div class="alert alert-danger alert-dismissible fade show">';
+            x+='<svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>'
+            x+='<strong>Error!</strong> {{ $message }}';
+            x+='<button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>';
+            x+='</button>';
+            x+='</div>';
+            x+='@enderror';
+            x+='</div>';
+
+            $( "#x" ).after(x);
+        });
+    </script>
+@endpush
 @endsection
