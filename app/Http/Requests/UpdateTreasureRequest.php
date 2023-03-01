@@ -13,7 +13,7 @@ class UpdateTreasureRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class UpdateTreasureRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id' => 'required',
+            'currency_id' => 'required',
+            'amount' => 'required',
+            'description' => ['sometimes', 'nullable', 'string'],
         ];
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateTreasureRequest;
 
 class TreasureController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +16,9 @@ class TreasureController extends Controller
      */
     public function index()
     {
-        return view('treasure.index');
+        $treasures = Treasure::all();
+
+        return view('treasure.index', compact('treasures'));
     }
 
     /**
@@ -36,7 +39,28 @@ class TreasureController extends Controller
      */
     public function store(StoreTreasureRequest $request)
     {
-        //
+        $formData = $request->validated();
+
+        // code generate sector
+
+        $objectName = new Treasure;
+        $table_name = $objectName->getTable();
+
+
+
+        $latest_id = $objectName->latest()->first()->id;
+
+        dd($latest_id);
+
+        $code_name = '';
+        if($latest_id == null || $latest_id == 0) {
+            $code_name = '1';
+        }else{
+
+        }
+
+        Treasure::create($formData);
+        return back();
     }
 
     /**
@@ -58,7 +82,7 @@ class TreasureController extends Controller
      */
     public function edit(Treasure $treasure)
     {
-        //
+        return view('treasure.edit', compact('treasure'));
     }
 
     /**
@@ -70,7 +94,10 @@ class TreasureController extends Controller
      */
     public function update(UpdateTreasureRequest $request, Treasure $treasure)
     {
-        //
+        $formData = $request->validated();
+
+        $treasure->update($formData);
+        return redirect(route('treasure.index'));
     }
 
     /**
@@ -81,6 +108,7 @@ class TreasureController extends Controller
      */
     public function destroy(Treasure $treasure)
     {
-        //
+        $treasure->delete();
+        return back();
     }
 }

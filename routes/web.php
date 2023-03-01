@@ -103,7 +103,11 @@ Route::prefix('/system')->group(function () {
 // Treasure Route
 
 Route::prefix('/treasure')->group( function () {
-    Route::controller(TreasureController::class)->prefix('/')->group(function () {
+    Route::controller(TreasureController::class)->prefix('/treasure')->group(function () {
         Route::get('/', 'index')->name('treasure.index');
+        Route::post('/', 'store')->name('treasure.store');
+        Route::get('/{treasure}/edit', 'edit')->name('treasure.edit');
+        Route::put('/{treasure}/update', 'update')->name('treasure.update');
+        Route::delete('/{treasure}/destroy', 'destroy')->name('treasure.destroy');
     });
 });

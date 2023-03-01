@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('code')->nullable();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('currency_id');
             $table->double('amount');
             $table->string('description');
             $table->timestamps();

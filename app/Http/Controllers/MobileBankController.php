@@ -88,7 +88,6 @@ class MobileBankController extends Controller
      */
     public function destroy(MobileBank $mobilebanksystem)
     {
-
         $mobilebanksystem->delete();
         return back();
     }
