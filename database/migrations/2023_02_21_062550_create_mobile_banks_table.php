@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('mobile_banks', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->nullable();
             $table->string('name');
             $table->string('number');
             $table->tinyInteger('owner_id');

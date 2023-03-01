@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('income_cards', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->nullable();
             $table->unsignedBigInteger('card_id');
             $table->tinyInteger('credit_by');
             $table->tinyInteger('credit_for');

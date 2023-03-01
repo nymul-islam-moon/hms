@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('expense_cards', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->nullable();
             $table->bigInteger('card_id');
             $table->bigInteger('expense_by_id');
             $table->bigInteger('currency');

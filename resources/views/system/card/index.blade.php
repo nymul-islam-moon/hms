@@ -85,6 +85,7 @@
                                 <tr>
                                     <th>Action</th>
                                     <th class="width80">#</th>
+                                    <th>Card ID</th>
                                     <th>Card Name</th>
                                     <th>card Number</th>
                                     <th>Owner</th>

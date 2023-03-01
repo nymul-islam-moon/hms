@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('income_mobile_banks', function (Blueprint $table) {
             $table->id();
+            $table->string('code')->nullable();
             $table->unsignedBigInteger('mobile_bank_id');
             $table->tinyInteger('currency');
             $table->tinyInteger('cash_in_for');

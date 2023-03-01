@@ -8,6 +8,7 @@ use App\Http\Controllers\IncomeCardController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\IncomeMobileBankController;
 use App\Http\Controllers\MobileBankController;
+use App\Http\Controllers\TreasureController;
 use App\Models\IncomeBikash;
 use App\Models\IncomeMobileBank;
 use Illuminate\Support\Facades\Route;
@@ -64,6 +65,9 @@ Route::prefix('/income')->group(function () {
 });
 
 
+
+// Expense Route
+
 Route::prefix('/expense')->group(function () {
     Route::controller(ExpenseCardController::class)->prefix('/card')->group(function () {
         Route::get('/', 'index')->name('expense.card.index');
@@ -75,6 +79,7 @@ Route::prefix('/expense')->group(function () {
 });
 
 
+// System Route
 
 Route::prefix('/system')->group(function () {
     Route::controller(MobileBankController::class)->prefix('/mobilebank')->group(function () {
@@ -92,5 +97,13 @@ Route::prefix('/system')->group(function () {
         Route::get('/{card}/edit', 'edit')->name('system.card.edit');
         Route::put('/{card}/update', 'update')->name('system.card.update');
         Route::delete('/{card}/destroy', 'destroy')->name('system.card.destroy');
+    });
+});
+
+// Treasure Route
+
+Route::prefix('/treasure')->group( function () {
+    Route::controller(TreasureController::class)->prefix('/')->group(function () {
+        Route::get('/', 'index')->name('treasure.index');
     });
 });
