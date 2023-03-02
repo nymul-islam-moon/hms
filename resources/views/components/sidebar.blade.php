@@ -31,7 +31,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="{{ route('expense.card.index') }}">Card</a></li>
-                    <li><a href="">Cash</a></li>
+                    <li><a href="{{ route('expense.cash.index') }}">Cash</a></li>
                     <li><a href="">Mobile Bank</a></li>
                 </ul>
             </li>

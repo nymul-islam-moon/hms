@@ -25,7 +25,7 @@ class UpdateIncomeCardRequest extends FormRequest
     {
         return [
             'card_id' => 'required',
-            'currency' => 'required',
+            'currency_id' => 'required',
             'credit_by' => 'required',
             'credit_for' => 'required',
             'amount' => 'required',

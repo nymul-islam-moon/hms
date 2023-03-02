@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->tinyInteger('cashed_by');
             $table->tinyInteger('cashed_for');
-            $table->tinyInteger('currency');
+            $table->unsignedBigInteger('currency_id');
             $table->double('amount');
             $table->date('date');
             $table->text('description')->nullable();

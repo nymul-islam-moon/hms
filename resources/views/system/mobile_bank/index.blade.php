@@ -87,6 +87,7 @@
                                 <tr>
                                     <th>Action</th>
                                     <th class="width80">#</th>
+                                    <th>Code</th>
                                     <th>Name</th>
                                     <th>Number</th>
                                     <th>Owner</th>
@@ -112,6 +113,7 @@
                                             </div>
                                         </td>
                                         <td><strong>{{ $key+1 }}</strong></td>
+                                        <td>{{ $mobileBank->code }}</td>
                                         <td>{{ $mobileBank->name }}</td>
                                         <td>{{ $mobileBank->number }}</td>
                                         <td>{{ $mobileBank->owner_id }}</td>

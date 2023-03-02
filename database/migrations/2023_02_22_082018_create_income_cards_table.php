@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('card_id');
             $table->tinyInteger('credit_by');
             $table->tinyInteger('credit_for');
-            $table->tinyInteger('currency');
+            $table->tinyInteger('currency_id');
             $table->double('amount');
             $table->date('date');
             $table->text('description')->nullable();

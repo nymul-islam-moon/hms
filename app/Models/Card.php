@@ -11,5 +11,5 @@ class Card extends Model
 
     protected $table = 'cards';
 
-    protected $fillable = ['name', 'number', 'owner_id'];
+    protected $fillable = ['name', 'number', 'owner_id', 'code'];
 }

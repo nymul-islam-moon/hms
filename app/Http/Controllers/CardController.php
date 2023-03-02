@@ -39,6 +39,35 @@ class CardController extends Controller
     public function store(StoreCardRequest $request)
     {
         $formData = $request->validated();
+
+        // code generation start
+
+        $code_name = '';
+
+        $objectName = new Card();
+
+        if (Card::where('id', 1)->first()) {
+            $latest_id = $objectName->latest()->first()->id;
+            $latest_id = $latest_id + 1;
+        } else {
+            $latest_id = 1;
+        }
+
+        $table_name = $objectName->getTable();
+        $name = explode('_', $table_name);
+
+
+        if(count($name) > 1){
+            $code_name = substr($name[0], 0, 3) . '-' . substr($name[1], 0, 3) . '-' . $latest_id;
+
+        }else{
+            $code_name = substr($name[0], 0, 3) . '-' . $latest_id;
+        }
+
+        $formData['code'] = strtoupper($code_name);
+
+        // Code generation End
+
         Card::create($formData);
         return back();
     }

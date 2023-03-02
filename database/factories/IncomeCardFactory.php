@@ -21,7 +21,7 @@ class IncomeCardFactory extends Factory
             'card_number' => $this->faker->sentence(),
             'credit_by' => rand(1,3),
             'credit_for' => rand(1,3),
-            'currency' => rand(1,3),
+            'currency_id' => rand(1,3),
             'amount' => rand(1,1000),
             'date' => $this->faker->dateTimeThisMonth(),
             'description' => $this->faker->paragraph(5),

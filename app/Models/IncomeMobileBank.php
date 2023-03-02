@@ -11,5 +11,5 @@ class IncomeMobileBank extends Model
 
     protected $table = 'income_mobile_banks';
 
-    protected $fillable = [ 'mobile_bank_id', 'currency', 'cash_in_for', 'amount', 'date', 'cash_in_by_name', 'cash_in_by_phone', 'description' ];
+    protected $fillable = [ 'mobile_bank_id', 'currency_id', 'cash_in_for', 'amount', 'date', 'cash_in_by_name', 'cash_in_by_phone', 'description', 'code'];
 }

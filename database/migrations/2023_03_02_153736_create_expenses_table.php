@@ -13,15 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('expense_cards', function (Blueprint $table) {
+        Schema::create('expenses', function (Blueprint $table) {
             $table->id();
-            $table->string('code')->nullable();
-            $table->bigInteger('card_id');
-            $table->bigInteger('expense_by_id');
-            $table->bigInteger('currency_id');
-            $table->string('amount');
-            $table->date('date');
-            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('expense_cards');
+        Schema::dropIfExists('expenses');
     }
 };

@@ -85,7 +85,7 @@
                                 <tr>
                                     <th>Action</th>
                                     <th class="width80">#</th>
-                                    <th>Card ID</th>
+                                    <th>Code</th>
                                     <th>Card Name</th>
                                     <th>card Number</th>
                                     <th>Owner</th>
@@ -111,6 +111,7 @@
                                             </div>
                                         </td>
                                         <td><strong>{{ $key+1 }}</strong></td>
+                                        <td>{{ $card->code }}</td>
                                         <td>{{ $card->name }}</td>
                                         <td>{{ $card->number }}</td>
                                         <td>{{ $card->owner_id }}</td>

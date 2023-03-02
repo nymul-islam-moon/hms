@@ -27,7 +27,7 @@ class StoreCashRequest extends FormRequest
             'name' => 'required',
             'cashed_by' => 'required',
             'cashed_for' => 'required',
-            'currency' => 'required',
+            'currency_id' => 'required',
             'amount' => 'required',
             'date' =>'required',
             'description' => ['sometimes', 'nullable', 'string'],

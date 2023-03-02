@@ -11,6 +11,6 @@ class ExpenseCard extends Model
 
     protected $table = 'expense_cards';
 
-    protected $fillable = ['card_id', 'currency', 'amount', 'date', 'expense_by_id', 'description', 'code'];
+    protected $fillable = ['card_id', 'currency_id', 'amount', 'date', 'expense_by_id', 'description', 'code'];
 
 }

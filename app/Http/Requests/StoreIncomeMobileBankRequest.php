@@ -25,7 +25,7 @@ class StoreIncomeMobileBankRequest extends FormRequest
     {
         return [
             'mobile_bank_id' => 'required',
-            'currency' => 'required',
+            'currency_id' => 'required',
             'cash_in_for' => 'required',
             'amount' => 'required',
             'date' => 'required',

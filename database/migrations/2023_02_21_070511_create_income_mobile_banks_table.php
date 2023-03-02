@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('code')->nullable();
             $table->unsignedBigInteger('mobile_bank_id');
-            $table->tinyInteger('currency');
+            $table->tinyInteger('currency_id');
             $table->tinyInteger('cash_in_for');
             $table->double('amount');
             $table->date('date');

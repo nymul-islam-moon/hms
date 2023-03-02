@@ -11,7 +11,7 @@ class Treasure extends Model
 
     protected $table = 'treasures';
 
-    protected $fillable = ['user_id', 'amount', 'currency_id', 'description'];
+    protected $fillable = ['user_id', 'amount', 'currency_id', 'description', 'code'];
 
 
     public function rel_to_user()

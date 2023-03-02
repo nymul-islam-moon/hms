@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateExpenseCardRequest extends FormRequest
+class StoreExpenseCashRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,10 @@ class UpdateExpenseCardRequest extends FormRequest
     public function rules()
     {
         return [
-            'card_id'=> 'required',
-            'amount'=> 'required',
-            'currency_id'=> 'required',
-            'date'=> 'required',
-            'expense_by_id'=> 'required',
+            'expense_by_id' => 'required',
+            'currency_id' => 'required',
+            'amount' => 'required',
+            'date' => 'required',
             'description' => ['sometimes', 'nullable', 'string'],
         ];
     }

@@ -11,5 +11,5 @@ class Cash extends Model
 
     protected $table = 'cashes';
 
-    protected $fillable = ['name', 'cashed_by', 'cashed_for', 'currency', 'amount', 'date','description'];
+    protected $fillable = ['name', 'cashed_by', 'cashed_for', 'currency_id', 'amount', 'date','description', 'code'];
 }

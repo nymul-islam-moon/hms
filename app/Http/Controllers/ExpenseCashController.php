@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ExpenseCard;
-use App\Http\Requests\StoreExpenseCardRequest;
-use App\Http\Requests\UpdateExpenseCardRequest;
-use App\Models\Card;
+use App\Models\ExpenseCash;
+use App\Http\Requests\StoreExpenseCashRequest;
+use App\Http\Requests\UpdateExpenseCashRequest;
+use App\Models\User;
 
-class ExpenseCardController extends Controller
+class ExpenseCashController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class ExpenseCardController extends Controller
      */
     public function index()
     {
-        $cards = Card::all();
-        $expenseCards = ExpenseCard::all();
-        return view('expense.card.index', compact('cards', 'expenseCards'));
+        $users = User::all();
+        $expenseCashes = ExpenseCash::latest()->get();
+        return view('expense.cash.index', compact('expenseCashes', 'users'));
     }
 
     /**
@@ -34,21 +34,20 @@ class ExpenseCardController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreExpenseCardRequest  $request
+     * @param  \App\Http\Requests\StoreExpenseCashRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreExpenseCardRequest $request)
+    public function store(StoreExpenseCashRequest $request)
     {
         $formData = $request->validated();
-
 
         // code generation start
 
         $code_name = '';
 
-        $objectName = new ExpenseCard();
+        $objectName = new ExpenseCash();
 
-        if (ExpenseCard::where('id', 1)->first()) {
+        if (ExpenseCash::where('id', 1)->first()) {
             $latest_id = $objectName->latest()->first()->id;
             $latest_id = $latest_id + 1;
         } else {
@@ -70,18 +69,19 @@ class ExpenseCardController extends Controller
 
         // Code generation End
 
-        ExpenseCard::create($formData);
+        ExpenseCash::create($formData);
         return back();
+
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ExpenseCard  $expenseCard
+     * @param  \App\Models\ExpenseCash  $expenseCash
      * @return \Illuminate\Http\Response
      */
-    public function show(ExpenseCard $expenseCard)
+    public function show(ExpenseCash $expenseCash)
     {
         //
     }
@@ -89,39 +89,34 @@ class ExpenseCardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ExpenseCard  $expenseCard
+     * @param  \App\Models\ExpenseCash  $expenseCash
      * @return \Illuminate\Http\Response
      */
-    public function edit(ExpenseCard $expenseCard)
+    public function edit(ExpenseCash $expenseCash)
     {
-        $cards = Card::all();
-        return view('expense.card.edit', compact('expenseCard', 'cards'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateExpenseCardRequest  $request
-     * @param  \App\Models\ExpenseCard  $expenseCard
+     * @param  \App\Http\Requests\UpdateExpenseCashRequest  $request
+     * @param  \App\Models\ExpenseCash  $expenseCash
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateExpenseCardRequest $request, ExpenseCard $expenseCard)
+    public function update(UpdateExpenseCashRequest $request, ExpenseCash $expenseCash)
     {
-        $formData = $request->validated();
-
-        $expenseCard->update($formData);
-        return redirect(route('expense.card.index'));
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ExpenseCard  $expenseCard
+     * @param  \App\Models\ExpenseCash  $expenseCash
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ExpenseCard $expenseCard)
+    public function destroy(ExpenseCash $expenseCash)
     {
-        $expenseCard->delete();
-        return back();
+        //
     }
 }

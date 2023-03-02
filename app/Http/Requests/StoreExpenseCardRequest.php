@@ -26,7 +26,7 @@ class StoreExpenseCardRequest extends FormRequest
         return [
             'card_id'=> 'required',
             'amount'=> 'required',
-            'currency'=> 'required',
+            'currency_id'=> 'required',
             'date'=> 'required',
             'expense_by_id'=> 'required',
             'description' => ['sometimes', 'nullable', 'string'],

@@ -4,6 +4,8 @@ use App\Http\Controllers\BikashController;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\CashController;
 use App\Http\Controllers\ExpenseCardController;
+use App\Http\Controllers\ExpenseCashController;
+use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\IncomeCardController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\IncomeMobileBankController;
@@ -69,12 +71,33 @@ Route::prefix('/income')->group(function () {
 // Expense Route
 
 Route::prefix('/expense')->group(function () {
+
+
+
+    Route::controller(ExpenseController::class)->prefix('/')->group(function () {
+        Route::get('/', 'index')->name('expense.dashboard.index');
+        // Route::post('/', 'store')->name('expensestore');
+        // Route::get('/{expenseCard}/edit', 'edit')->name('expense.edit');
+        // Route::put('/{expenseCard}/update', 'update')->name('expense.card.update');
+        // Route::delete('/{expenseCard}/destroy', 'destroy')->name('expense.card.destroy');
+    });
+
+
     Route::controller(ExpenseCardController::class)->prefix('/card')->group(function () {
         Route::get('/', 'index')->name('expense.card.index');
         Route::post('/', 'store')->name('expense.card.store');
         Route::get('/{expenseCard}/edit', 'edit')->name('expense.card.edit');
         Route::put('/{expenseCard}/update', 'update')->name('expense.card.update');
         Route::delete('/{expenseCard}/destroy', 'destroy')->name('expense.card.destroy');
+    });
+
+
+    Route::controller(ExpenseCashController::class)->prefix('/cash')->group(function () {
+        Route::get('/', 'index')->name('expense.cash.index');
+        Route::post('/', 'store')->name('expense.cash.store');
+        Route::get('/{expenseCash}/edit', 'edit')->name('expense.cash.edit');
+        Route::put('/{expenseCash}/update', 'update')->name('expense.cash.update');
+        Route::delete('/{expenseCash}/destroy', 'destroy')->name('expense.cash.destroy');
     });
 });
 

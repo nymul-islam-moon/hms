@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('expense_cards', function (Blueprint $table) {
+        Schema::create('expense_cashes', function (Blueprint $table) {
             $table->id();
             $table->string('code')->nullable();
-            $table->bigInteger('card_id');
-            $table->bigInteger('expense_by_id');
-            $table->bigInteger('currency_id');
-            $table->string('amount');
+            $table->double('amount');
             $table->date('date');
+            $table->unsignedBigInteger('expense_by_id');
+            $table->tinyInteger('currency_id');
             $table->text('description')->nullable();
             $table->timestamps();
         });
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('expense_cards');
+        Schema::dropIfExists('expense_cashes');
     }
 };
