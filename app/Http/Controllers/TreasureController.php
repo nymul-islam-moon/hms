@@ -39,28 +39,28 @@ class TreasureController extends Controller
      */
     public function store(StoreTreasureRequest $request)
     {
-        $formData = $request->validated();
+        // $formData = $request->validated();
 
-        // code generate sector
+        // // code generate sector
 
-        $objectName = new Treasure;
-        $table_name = $objectName->getTable();
+        // $objectName = new Treasure;
+        // $table_name = $objectName->getTable();
+        // dd($table_name);
 
 
+        // // $latest_id = $objectName->latest()->first()->id;
 
-        $latest_id = $objectName->latest()->first()->id;
+        // // dd($latest_id);
 
-        dd($latest_id);
+        // // $code_name = '';
+        // // if($latest_id == null || $latest_id == 0) {
+        // //     $code_name = '1';
+        // // }else{
 
-        $code_name = '';
-        if($latest_id == null || $latest_id == 0) {
-            $code_name = '1';
-        }else{
+        // // }
 
-        }
-
-        Treasure::create($formData);
-        return back();
+        // Treasure::create($formData);
+        // return back();
     }
 
     /**

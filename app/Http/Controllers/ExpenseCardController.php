@@ -41,6 +41,32 @@ class ExpenseCardController extends Controller
     {
         $formData = $request->validated();
 
+        $code_name = '';
+
+        // code generate sector
+
+        $objectName = new ExpenseCard();
+
+        if (ExpenseCard::where('id', 1)->first()) {
+            $latest_id = $objectName->latest()->first()->id;
+            $latest_id = $latest_id + 1;
+        } else {
+            $latest_id = 1;
+        }
+
+        $table_name = $objectName->getTable();
+        $name = explode('_', $table_name);
+
+
+        if(count($name) > 1){
+            $code_name = substr($name[0], 0, 3) . '-' . substr($name[1], 0, 3) . '-' . $latest_id;
+
+        }else{
+            $code_name = substr($name[0], 0, 3) . '-' . $latest_id;
+        }
+
+        $formData['code'] = strtoupper($code_name);
+
         ExpenseCard::create($formData);
         return back();
 

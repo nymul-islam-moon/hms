@@ -131,7 +131,7 @@
                                 <tr>
                                     <th>Action</th>
                                     <th class="width80">#</th>
-                                    <th>Card ID</th>
+                                    <th>Code</th>
                                     <th>Card</th>
                                     <th>Expense By</th>
                                     <th>DATE</th>
@@ -159,6 +159,7 @@
                                             </div>
                                         </td>
                                         <td><strong>{{ $key+1 }}</strong></td>
+                                        <td>{{ $expenseCard->code }}</td>
                                         <td>{{ $expenseCard->card_id }}</td>
                                         <td>{{ $expenseCard->expense_by_id }}</td>
                                         <td>{{ $expenseCard->date }}</td>
