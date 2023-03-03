@@ -6,6 +6,7 @@ use App\Models\ExpenseCard;
 use App\Http\Requests\StoreExpenseCardRequest;
 use App\Http\Requests\UpdateExpenseCardRequest;
 use App\Models\Card;
+use App\Models\User;
 
 class ExpenseCardController extends Controller
 {
@@ -18,7 +19,7 @@ class ExpenseCardController extends Controller
     {
         $cards = Card::all();
         $expenseCards = ExpenseCard::all();
-        return view('expense.card.index', compact('cards', 'expenseCards'));
+        return view('expense.cards.index', compact('cards', 'expenseCards'));
     }
 
     /**
@@ -94,8 +95,9 @@ class ExpenseCardController extends Controller
      */
     public function edit(ExpenseCard $expenseCard)
     {
+        $users = User::all();
         $cards = Card::all();
-        return view('expense.card.edit', compact('expenseCard', 'cards'));
+        return view('expense.cards.edit', compact('expenseCard', 'cards', 'users'));
     }
 
     /**

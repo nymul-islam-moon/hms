@@ -18,7 +18,7 @@ class ExpenseCashController extends Controller
     {
         $users = User::all();
         $expenseCashes = ExpenseCash::latest()->get();
-        return view('expense.cash.index', compact('expenseCashes', 'users'));
+        return view('expense.cashes.index', compact('expenseCashes', 'users'));
     }
 
     /**
@@ -94,7 +94,8 @@ class ExpenseCashController extends Controller
      */
     public function edit(ExpenseCash $expenseCash)
     {
-        //
+        $users = User::all();
+        return view('expense.cashes.edit', compact('expenseCash', 'users'));
     }
 
     /**
@@ -106,7 +107,10 @@ class ExpenseCashController extends Controller
      */
     public function update(UpdateExpenseCashRequest $request, ExpenseCash $expenseCash)
     {
-        //
+        $formData = $request->validated();
+
+        $expenseCash->update($formData);
+        return redirect(route('expense.cash.index'));
     }
 
     /**
@@ -117,6 +121,7 @@ class ExpenseCashController extends Controller
      */
     public function destroy(ExpenseCash $expenseCash)
     {
-        //
+        $expenseCash->delete();
+        return back();
     }
 }

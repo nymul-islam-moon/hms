@@ -6,6 +6,7 @@ use App\Http\Controllers\CashController;
 use App\Http\Controllers\ExpenseCardController;
 use App\Http\Controllers\ExpenseCashController;
 use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\ExpenseMobileBankController;
 use App\Http\Controllers\IncomeCardController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\IncomeMobileBankController;
@@ -98,6 +99,15 @@ Route::prefix('/expense')->group(function () {
         Route::get('/{expenseCash}/edit', 'edit')->name('expense.cash.edit');
         Route::put('/{expenseCash}/update', 'update')->name('expense.cash.update');
         Route::delete('/{expenseCash}/destroy', 'destroy')->name('expense.cash.destroy');
+    });
+
+    // Mobile bank Route
+    Route::controller(ExpenseMobileBankController::class)->prefix('/mobilebank')->group(function () {
+        Route::get('/', 'index')->name('expense.mobilebank.index');
+        Route::post('/', 'store')->name('expense.mobilebank.store');
+        Route::get('/{expenseMobilebank}/edit', 'edit')->name('expense.mobilebank.edit');
+        Route::put('/{expenseMobilebank}/update', 'update')->name('expense.mobilebank.update');
+        Route::delete('/{expenseMobilebank}/destroy', 'destroy')->name('expense.mobilebank.destroy');
     });
 });
 
