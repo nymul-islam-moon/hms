@@ -24,13 +24,13 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Mobile Bank </label>
-                                    <select class="form-control default-select" name="card_id" id="card_id" tabindex="-98">
+                                    <select class="form-control default-select" name="mobile_bank_id" id="mobile_bank_id" tabindex="-98">
                                         @foreach ($mobileBanks as $mobilebank)
-                                            <option value="{{ $card->id }}">{{ $card->name }}</option>
+                                            <option value="{{ $mobilebank->id }}">{{ $mobilebank->name }}</option>
                                         @endforeach
                                     </select>
 
-                                    @error('card_id')
+                                    @error('mobile_bank_id')
                                         <div class="alert alert-danger alert-dismissible fade show">
                                             <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
                                             <strong>Error!</strong> {{ $message }}
@@ -141,7 +141,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($expenseCards as $key=> $expenseCard)
+                                @foreach ($expenseMobileBanks as $key=> $expenseMobileBank)
                                     <tr>
                                         <td>
                                             <div class="dropdown">
@@ -149,8 +149,8 @@
                                                     <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="{{ route('expense.card.edit', $expenseCard->id) }}">Edit</a>
-                                                    <form action="{{ route('expense.card.destroy', $expenseCard->id) }}" method="post">
+                                                    <a class="dropdown-item" href="{{ route('expense.mobilebank.edit', $expenseMobileBank->id) }}">Edit</a>
+                                                    <form action="{{ route('expense.mobilebank.destroy', $expenseMobileBank->id) }}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="dropdown-item" href="#">Delete</button>
@@ -159,15 +159,15 @@
                                             </div>
                                         </td>
                                         <td><strong>{{ $key+1 }}</strong></td>
-                                        <td>{{ $expenseCard->code }}</td>
-                                        <td>{{ $expenseCard->card_id }}</td>
-                                        <td>{{ $expenseCard->expense_by_id }}</td>
-                                        <td>{{ $expenseCard->date }}</td>
+                                        <td>{{ $expenseMobileBank->code }}</td>
+                                        <td>{{ $expenseMobileBank->mobile_bank_id }}</td>
+                                        <td>{{ $expenseMobileBank->expense_by_id }}</td>
+                                        <td>{{ $expenseMobileBank->date }}</td>
                                         <td><span class="badge light badge-success">Successful</span></td>
-                                        <td>{{ $expenseCard->amount }}  {{ $expenseCard->currency == 1 ? 'Taka' : 'Doller' }}</td>
-                                        <td>{{ $expenseCard->description }}</td>
+                                        <td>{{ $expenseMobileBank->amount }}  {{ $expenseMobileBank->currency == 1 ? 'Taka' : 'Doller' }}</td>
+                                        <td>{{ $expenseMobileBank->description }}</td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

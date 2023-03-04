@@ -16,9 +16,9 @@ class ExpenseMobileBankController extends Controller
      */
     public function index()
     {
-        $mobiileBank = MobileBank::all();
-        $expenseMobileBank = ExpenseMobileBank::all();
-        return view('expense.mobile_bank.index', compact('expenseMobileBank', 'mobileBank'));
+        $mobileBanks = MobileBank::all();
+        $expenseMobileBanks = ExpenseMobileBank::all();
+        return view('expense.mobile_bank.index', compact('expenseMobileBanks', 'mobileBanks'));
     }
 
     /**
@@ -39,7 +39,38 @@ class ExpenseMobileBankController extends Controller
      */
     public function store(StoreExpenseMobileBankRequest $request)
     {
-        //
+        $formData = $request->validated();
+
+        // code generation start
+
+        $code_name = '';
+
+        $objectName = new ExpenseMobileBank();
+
+        if (ExpenseMobileBank::where('id', 1)->first()) {
+            $latest_id = $objectName->latest()->first()->id;
+            $latest_id = $latest_id + 1;
+        } else {
+            $latest_id = 1;
+        }
+
+        $table_name = $objectName->getTable();
+        $name = explode('_', $table_name);
+
+
+        if(count($name) > 1){
+            $code_name = substr($name[0], 0, 3) . '-' . substr($name[1], 0, 3) . '-' . $latest_id;
+
+        }else{
+            $code_name = substr($name[0], 0, 3) . '-' . $latest_id;
+        }
+
+        $formData['code'] = strtoupper($code_name);
+
+        // Code generation End
+
+        ExpenseMobileBank::create($formData);
+        return back();
     }
 
     /**
@@ -61,7 +92,8 @@ class ExpenseMobileBankController extends Controller
      */
     public function edit(ExpenseMobileBank $expenseMobileBank)
     {
-        //
+        $mobileBanks = MobileBank::all();
+        return view('expense.mobile_bank.edit', compact('expenseMobileBank', 'mobileBanks'));
     }
 
     /**
@@ -73,7 +105,10 @@ class ExpenseMobileBankController extends Controller
      */
     public function update(UpdateExpenseMobileBankRequest $request, ExpenseMobileBank $expenseMobileBank)
     {
-        //
+        $formData = $request->validated();
+
+        $expenseMobileBank->update($formData);
+        return redirect(route('expense.mobilebank.index'));
     }
 
     /**
@@ -84,6 +119,7 @@ class ExpenseMobileBankController extends Controller
      */
     public function destroy(ExpenseMobileBank $expenseMobileBank)
     {
-        //
+        $expenseMobileBank->delete();
+        return back();
     }
 }

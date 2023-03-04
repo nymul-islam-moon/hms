@@ -13,7 +13,7 @@ class UpdateExpenseMobileBankRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class UpdateExpenseMobileBankRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'mobile_bank_id' => 'required',
+            'description' => ['sometimes', 'nullable', 'string'],
+            'expense_by_id' => 'required',
+            'currency_id' => 'required',
+            'amount' => 'required',
+            'date' => 'required',
         ];
     }
 }

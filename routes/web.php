@@ -105,9 +105,9 @@ Route::prefix('/expense')->group(function () {
     Route::controller(ExpenseMobileBankController::class)->prefix('/mobilebank')->group(function () {
         Route::get('/', 'index')->name('expense.mobilebank.index');
         Route::post('/', 'store')->name('expense.mobilebank.store');
-        Route::get('/{expenseMobilebank}/edit', 'edit')->name('expense.mobilebank.edit');
-        Route::put('/{expenseMobilebank}/update', 'update')->name('expense.mobilebank.update');
-        Route::delete('/{expenseMobilebank}/destroy', 'destroy')->name('expense.mobilebank.destroy');
+        Route::get('/{expenseMobileBank}/edit', 'edit')->name('expense.mobilebank.edit');
+        Route::put('/{expenseMobileBank}/update', 'update')->name('expense.mobilebank.update');
+        Route::delete('/{expenseMobileBank}/destroy', 'destroy')->name('expense.mobilebank.destroy');
     });
 });
 
