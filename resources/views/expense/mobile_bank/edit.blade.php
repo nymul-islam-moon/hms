@@ -22,6 +22,7 @@
                         @csrf
                         @method('PUT')
                         <div class="form-row">
+
                             <div class="form-group col-md-6">
                                 <label>Mobile Bank </label>
                                 <select class="form-control default-select" name="mobile_bank_id" id="mobile_bank_id" tabindex="-98">

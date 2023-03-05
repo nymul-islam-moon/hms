@@ -19,6 +19,7 @@
                     <span class="nav-text">Income</span>
                 </a>
                 <ul aria-expanded="false">
+                    <li><a href="{{ route('income.dashboard.index') }}">Dashboard</a></li>
                     <li><a href="{{ route('income.card.index') }}">Card</a></li>
                     <li><a href="{{ route('income.cash.index') }}">Cash</a></li>
                     <li><a href="{{ route('income.mobilebank.index') }}">Mobile Bank</a></li>
